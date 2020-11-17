@@ -7,7 +7,7 @@ const AppRouter = () => {
   return (
     <Router>
       <Route exact path="/" component={Home} />
-      <Route path="/chat" component={Chat} />
+      <Route path="/Chat" component={Chat} />
     </Router>
   );
 };

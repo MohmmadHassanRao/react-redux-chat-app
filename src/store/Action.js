@@ -18,19 +18,22 @@ export const facebook_login = (history) => {
           photo: user.photoURL,
           uid: user.uid,
         };
-        // console.log(createUser);
+
         // sending data to firebase database
         firebase
           .database()
           .ref("/")
-          .child(`users/${user.uid}`)
+          .child(`users/${createUser.uid}`)
           .set(createUser)
           // if data sent! then i will get an alert('login success')
+
           .then(() => {
             dispatch({ type: "SET_USER", payload: createUser });
             alert("Login Successfuly");
-            history.push("chat");
-          });
+            history.push("/Chat");
+          })
+
+          .catch((error) => error);
       })
       .catch(function (error) {
         var errorCode = error.code;

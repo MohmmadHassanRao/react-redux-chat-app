@@ -1,8 +1,8 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-
 import { facebook_login } from "../store/Action";
+import "./Home.css";
 
 const Home = () => {
   let history = useHistory();
